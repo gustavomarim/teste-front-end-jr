@@ -1,0 +1,30 @@
+@use '../../../styles/mixins'
+@use '../../../styles/variables'
+
+#product-card
+  @include mixins.flex (center, center, wrap)
+  flex-direction: column
+  cursor: pointer
+
+  div
+    @include mixins.flex (center, center, wrap)
+    box-shadow: variables.$box-shadow
+    border-radius: variables.$border-radius-default
+    width: 128px
+    height: 128px
+    background-color: #F4F4F4
+
+    img
+      width: 61px
+      height: 61px
+
+  span
+    @include mixins.font-style(500px, 16px, 24px)
+    color: variables.$PRETO
+    margin-top: 22px
+
+  &:first-child
+    div
+      background-color: variables.$branco
+    span
+      color: variables.$rosa-primario
