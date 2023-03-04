@@ -1,0 +1,32 @@
+@use './variables'
+
+@mixin border-box
+  box-sizing: border-box
+
+@mixin title-section
+  @include font-style(700, 30px, 45px)
+  text-align: center
+  color: variables.$rosa-primario
+
+@mixin font-style($font-weight, $font-size, $line-height)
+  font-weight: $font-weight
+  font-size: $font-size
+  line-height: $line-height
+
+@mixin display-grid ($col:0, $rol:0)
+  display: grid
+  grid-template-columns: $col
+  grid-template-rows: $rol
+
+@mixin flex ($justify-content, $align-items, $flex-wrap)
+  display: flex
+  justify-content: $justify-content
+  align-items: $align-items
+  flex-wrap: $flex-wrap
+
+@mixin position($position, $top, $right , $bottom, $left)
+  position: $position
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
