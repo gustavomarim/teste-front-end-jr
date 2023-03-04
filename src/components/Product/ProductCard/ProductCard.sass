@@ -1,0 +1,49 @@
+@use '../../../styles/mixins'
+@use '../../../styles/variables'
+
+.card
+  width: 270px
+  // height: 500px
+  border-radius: 10px
+  cursor: pointer
+  box-shadow: 0px 3px 19px rgba(0, 0, 0, 0.22)
+
+  .product-image
+    height: 228px
+    width: 247px
+    padding: 22px 12px 19px 12px
+
+  .product-info
+    padding: 0 12px
+
+  .product-resume
+    @include mixins.font-style(300, 15px, 22px)
+    color: variables.$preto
+    margin-bottom: 12px
+
+  .old-price
+    display: block
+    @include mixins.font-style(400, 16px, 24px)
+    text-decoration-line: line-through
+    margin-bottom: 2px
+    color: #808080
+
+  .new-price
+    display: block
+    @include mixins.font-style(700, 20px, 30px)
+    margin-bottom: 2px
+    color: variables.$preto
+
+  .installment-price
+    @include mixins.font-style(400, 12px, 18px)
+    margin-bottom: 7px
+    color: variables.$preto
+
+  .delivery-price
+    display: block
+    @include mixins.font-style(400, 12px, 18px)
+    color: variables.$rosa-primario
+    margin-bottom: 12px
+
+  button
+    margin-bottom: 12px
