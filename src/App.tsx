@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.sass';
+import { AdCard } from './components/AdCard';
 import Carousel from './components/Carousel';
 import CategoriesFilter from './components/CategoriesFilter';
+import { Flex } from './components/layout/Flex';
 import { Modal } from './components/Modal';
 import { ModalProductCard } from './components/Product/ModalProductCard';
-import { ProductAdCard } from './components/Product/ProductAdCard';
 import ProductCard from './components/Product/ProductCard/index';
 import Promotion from './components/Promotion/index';
 import RelatedProducts from './components/RelatedProducts/index';
@@ -75,10 +76,20 @@ function App() {
           )}
         </Modal>
 
-        <article className='product-ad-card-container'>
-          <ProductAdCard />
-          <ProductAdCard />
-        </article>
+        <Flex direction='row' gap={105} padding={'0 82px'} wrap={'nowrap'}>
+          <AdCard
+            title={'Parceiros'}
+            content={'Lorem ipsum dolor sit amet, consectetur'}
+            borderRadius={'20px'}
+            padding={'114px 40px 40px 40px'}
+          />
+          <AdCard
+            title={'Parceiros'}
+            content={'Lorem ipsum dolor sit amet, consectetur'}
+            borderRadius={'20px'}
+            padding={'114px 40px 40px 40px'}
+          />
+        </Flex>
       </RelatedProducts>
     </>
   );
