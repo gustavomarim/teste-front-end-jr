@@ -1,0 +1,29 @@
+@use '../../../../styles/mixins'
+@use '../../../../styles/variables'
+
+.input-container
+  position: relative
+
+.input
+  display: block
+  font-size: 14px
+  padding: 14px 24px
+  width: 60vw
+  max-width: 657px
+  border: none
+  border-radius: variables.$border-radius-default
+  background: #F7F5F2
+  @include mixins.border-box
+  &:focus
+    outline: none
+  &:hover
+    outline: none
+  &::placeholder
+    @include mixins.font-style(500px, 14px, 21px)
+    padding: 14px 24px
+
+.input-icon
+  position: absolute
+  top: 50%
+  right: 10px
+  transform: translateY(-50%)
