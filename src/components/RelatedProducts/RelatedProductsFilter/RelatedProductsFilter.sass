@@ -1,0 +1,22 @@
+@use '../../../styles/mixins'
+@use '../../../styles/variables'
+
+#product-filter
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+  margin: 0 90px 20px 90px
+  @include mixins.font-style(400, 16px, 16px)
+  color: #b3b3b3
+
+  li
+    border: 1px solid #BDBDBD
+    border-left: none
+    padding: 12px 56px
+    text-align: center
+    cursor: pointer
+    &:first-child
+      border-left: 1px solid #BDBDBD
+
+.active
+  @include mixins.font-style(700, 16px, 16px)
+  color: variables.$rosa-primario
