@@ -1,0 +1,13 @@
+@use '../../../styles/variables'
+@use '../../../styles/mixins'
+
+button
+  background-color: variables.$rosa-primario
+  color: variables.$branco
+  cursor: pointer
+  border: none
+  @include mixins.border-box
+
+  &:hover,
+  &:focus
+    outline: none
