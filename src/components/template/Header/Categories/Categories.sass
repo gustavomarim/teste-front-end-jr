@@ -1,0 +1,24 @@
+@use '../../../../styles/mixins'
+@use '../../../../styles/variables'
+
+.categories
+  @include mixins.flex (space-evenly, center, wrap)
+  margin: 0 74px
+  box-shadow: 0px 8px 16px rgba(57, 48, 19, 0.12)
+  border-top: 1px solid #F0F0F0
+
+  ul
+    display: flex
+    gap: 90px
+
+    li
+      @include mixins.flex ('', center, wrap)
+      gap: 12px
+      @include mixins.font-style(600px, 12px, 18px)
+      text-transform: uppercase
+      color: variables.$gray1
+      padding: 10px 0 12px 0
+      cursor: pointer
+
+  li.active
+    color: variables.$rosa-primario
