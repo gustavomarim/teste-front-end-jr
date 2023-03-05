@@ -91,6 +91,50 @@ function App() {
           />
         </Flex>
       </RelatedProducts>
+
+      <RelatedProducts>
+        <a className='see-all' href='#'>Ver todos</a>
+        <Carousel>
+          {products
+            ? products.map((product: Product) => (
+                <ProductCard
+                  key={product.productName}
+                  id={product.productName}
+                  productName={product.productName}
+                  descriptionShort={product.descriptionShort}
+                  photo={product.photo}
+                  price={product.price}
+                  onClick={handleProduct}
+                />
+              ))
+            : ''}
+        </Carousel>
+        <Modal isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)}>
+          {product ? (
+            <ModalProductCard
+              setOpenModal={() => setOpenModal(!openModal)}
+              product={product}
+            />
+          ) : (
+            ''
+          )}
+        </Modal>
+
+        <Flex direction='row' gap={105} padding={'0 82px'} wrap={'nowrap'}>
+          <AdCard
+            title={'Produtos'}
+            content={'Lorem ipsum dolor sit amet, consectetur'}
+            borderRadius={'10px'}
+            padding={'48px 39px 39px 39px'}
+          />
+          <AdCard
+            title={'Produtos'}
+            content={'Lorem ipsum dolor sit amet, consectetur'}
+            borderRadius={'10px'}
+            padding={'48px 39px 39px 39px'}
+          />
+        </Flex>
+      </RelatedProducts>
     </>
   );
 }
