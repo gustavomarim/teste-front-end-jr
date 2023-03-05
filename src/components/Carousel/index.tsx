@@ -3,13 +3,21 @@ import './Carousel.sass';
 
 export interface CarouselProps {
   children?: React.ReactNode;
+  id: string;
 }
 
 const Carousel = (props: CarouselProps) => {
-  const ImagePadding = 20;
-  const scrollPerClick = 270 + ImagePadding;
+  const imagePadding = 20;
+
+  const widthCard = 270;
+  const scrollPerClick = widthCard + imagePadding;
   let scrollAmount = 0;
-  const sliders: Element | null = document.querySelector('.carousel-box');
+
+  /*
+   * Cada slider precisa ter um id distinto para ser referenciado
+   * para que o componente possa ser reutilizado.
+   */
+  const sliders: Element | null = document.getElementById(props.id);
 
   function sliderScrollLeft(): void {
     sliders?.scrollTo({
@@ -34,7 +42,9 @@ const Carousel = (props: CarouselProps) => {
 
   return (
     <div id='carousel'>
-      <div className='carousel-box'>{props.children}</div>
+      <div id={props.id} className='carousel-box'>
+        {props.children}
+      </div>
 
       <button className='switchLeft' onClick={sliderScrollLeft}>
         <ArrowLeft />

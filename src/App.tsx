@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     if (data) setProducts(data.products);
-  }, [data]);
+  }, [data, product]);
 
   function handleProduct(e: React.MouseEvent<HTMLDivElement>): void {
     const productID = e.currentTarget.id;
@@ -51,7 +51,7 @@ function App() {
       <CategoriesFilter />
       <RelatedProducts>
         <RelatedProductsFilter relatedProducts={relatedProductsFilterTitle} />
-        <Carousel>
+        <Carousel id={'carousel1'}>
           {products
             ? products.map((product: Product) => (
                 <ProductCard
@@ -97,7 +97,7 @@ function App() {
         <a className='see-all' href='#'>
           Ver todos
         </a>
-        <Carousel>
+        <Carousel id={'carousel2'}>
           {products
             ? products.map((product: Product) => (
                 <ProductCard
@@ -139,6 +139,36 @@ function App() {
         </Flex>
       </RelatedProducts>
       <Brand />
+      <RelatedProducts>
+        <a className='see-all' href='#'>
+          Ver todos
+        </a>
+        <Carousel id={'carousel3'}>
+          {products
+            ? products.map((product: Product) => (
+                <ProductCard
+                  key={product.productName}
+                  id={product.productName}
+                  productName={product.productName}
+                  descriptionShort={product.descriptionShort}
+                  photo={product.photo}
+                  price={product.price}
+                  onClick={handleProduct}
+                />
+              ))
+            : ''}
+        </Carousel>
+        <Modal isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)}>
+          {product ? (
+            <ModalProductCard
+              setOpenModal={() => setOpenModal(!openModal)}
+              product={product}
+            />
+          ) : (
+            ''
+          )}
+        </Modal>
+      </RelatedProducts>
     </>
   );
 }
