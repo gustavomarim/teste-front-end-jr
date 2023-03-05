@@ -1,0 +1,14 @@
+@use '../../styles/mixins'
+@use '../../styles/variables'
+
+.brand-container
+  margin: 95px 0 89px 0
+
+  h1
+    @include mixins.title-section
+    margin-bottom: 52px
+
+.brand-carousel
+  @include mixins.flex (center, center, wrap)
+  gap: 40px
+  margin: 0 82px

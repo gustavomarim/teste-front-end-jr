@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.sass';
 import { AdCard } from './components/AdCard';
+import { Brand } from './components/Brand';
 import Carousel from './components/Carousel';
 import CategoriesFilter from './components/CategoriesFilter';
 import { Flex } from './components/layout/Flex';
@@ -93,7 +94,9 @@ function App() {
       </RelatedProducts>
 
       <RelatedProducts>
-        <a className='see-all' href='#'>Ver todos</a>
+        <a className='see-all' href='#'>
+          Ver todos
+        </a>
         <Carousel>
           {products
             ? products.map((product: Product) => (
@@ -135,6 +138,7 @@ function App() {
           />
         </Flex>
       </RelatedProducts>
+      <Brand />
     </>
   );
 }
