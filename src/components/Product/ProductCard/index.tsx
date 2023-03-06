@@ -18,7 +18,12 @@ const ProductCard = (props: ProductCardProps) => {
   return (
     <div id={props.id} className='card' onClick={props.onClick}>
       <div className='product-image'>
-        <img src={props.photo} alt={props.productName} />
+        <img
+          src={props.photo}
+          alt={props.productName}
+          width={247}
+          height={228}
+        />
       </div>
       <div className='product-info'>
         <p className='product-resume'>{props.descriptionShort}</p>

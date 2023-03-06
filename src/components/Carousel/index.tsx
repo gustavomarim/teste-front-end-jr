@@ -46,11 +46,19 @@ const Carousel = (props: CarouselProps) => {
         {props.children}
       </div>
 
-      <button className='switchLeft' onClick={sliderScrollLeft}>
+      <button
+        className='switchLeft'
+        onClick={sliderScrollLeft}
+        aria-label='slide image to left'
+      >
         <ArrowLeft />
       </button>
 
-      <button className='switchRight' onClick={sliderScrollRight}>
+      <button
+        className='switchRight'
+        onClick={sliderScrollRight}
+        aria-label='slide image to right'
+      >
         <ArrowRight />
       </button>
     </div>
