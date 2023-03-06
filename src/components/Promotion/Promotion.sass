@@ -4,16 +4,16 @@
 $background-image: url('../../assets/images/promotion.png')
 
 .promotion
+  width: variables.$max-width
   padding: 52px 0 0 90px
   height: 395px
+  margin: 0 auto
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 99%), $background-image center / cover no-repeat
   opacity: 0.9
-
   h1
     @include mixins.font-style(600px,48px, 72px)
     max-width: 21ch
     color: variables.$branco
-
   h2
     @include mixins.font-style(600, 36px, 54px)
     color: variables.$branco

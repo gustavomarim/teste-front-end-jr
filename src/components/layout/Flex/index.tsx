@@ -1,5 +1,4 @@
 import React from 'react';
-import './Flex.sass';
 
 export interface FlexProps {
   direction?: 'row' | 'column';

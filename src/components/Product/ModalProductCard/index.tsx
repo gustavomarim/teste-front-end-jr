@@ -1,3 +1,4 @@
+import _ from '../../../core/functions/_';
 import { Product } from '../../../core/models/product';
 import { CloseIcon } from '../../icons';
 import './ModalProductCard.sass';
@@ -23,7 +24,9 @@ export const ModalProductCard = (props: ModalProductCardProps) => {
 
               <div className='product-info'>
                 <h2 className='product-name'>{product.productName}</h2>
-                <p className='product-price'>{product.price}</p>
+                <p className='product-price'>
+                  {_.convert.numberToReal(product.price)}
+                </p>
                 <p className='product-description'>
                   {product.descriptionShort}
                 </p>

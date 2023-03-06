@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from '../../../core/functions/_';
 import Button from '../../shared/Button/index';
 import './ProductCard.sass';
 
@@ -12,6 +13,8 @@ export interface ProductCardProps {
 }
 
 const ProductCard = (props: ProductCardProps) => {
+  const pricePlus6Percent = props.price + props.price * 0.06;
+
   return (
     <div id={props.id} className='card' onClick={props.onClick}>
       <div className='product-image'>
@@ -19,10 +22,12 @@ const ProductCard = (props: ProductCardProps) => {
       </div>
       <div className='product-info'>
         <p className='product-resume'>{props.descriptionShort}</p>
-        <span className='old-price'>R$ {props.price + props.price * 0.06}</span>
-        <span className='new-price'>R$ {props.price}</span>
+        <span className='old-price'>
+          {_.convert.numberToReal(pricePlus6Percent)}
+        </span>
+        <span className='new-price'>{_.convert.numberToReal(props.price)}</span>
         <p className='installment-price'>
-          ou 2x de R$ {props.price / 2} sem juros
+          ou 2x de {_.convert.numberToReal(props.price / 2)} sem juros
         </p>
         <span className='delivery-price'>Frete grátis</span>
 

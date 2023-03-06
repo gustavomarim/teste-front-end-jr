@@ -5,7 +5,6 @@
   @include mixins.flex (center, center, wrap)
   flex-direction: column
   cursor: pointer
-
   div
     @include mixins.flex (center, center, wrap)
     box-shadow: variables.$box-shadow
@@ -13,17 +12,15 @@
     width: 128px
     height: 128px
     background-color: #F4F4F4
-
     img
       width: 61px
       height: 61px
-
   span
     @include mixins.font-style(500px, 16px, 24px)
     color: variables.$PRETO
     margin-top: 22px
-
-  &:first-child
+  &:first-child,
+  &:hover
     div
       background-color: variables.$branco
     span

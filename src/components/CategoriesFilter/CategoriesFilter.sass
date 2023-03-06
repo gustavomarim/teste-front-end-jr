@@ -1,6 +1,9 @@
 @use '../../styles/mixins'
 @use '../../styles/variables'
 
+.categories-filter
+  width: variables.$max-width
+
 #product-list
   @include mixins.flex (space-evenly, center, wrap)
   gap: 10px

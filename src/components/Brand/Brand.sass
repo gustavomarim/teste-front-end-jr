@@ -2,9 +2,20 @@
 @use '../../styles/variables'
 
 .brand-container
-  margin: 95px 0 89px 0
+  width: variables.$max-width
+  margin-top: 95px
+  margin-bottom: 89px
+  position: relative
 
-  h1
+  .carousel-btn
+    position: absolute
+    right: 90px
+    top: 55%
+    border-radius: 50%
+    cursor: pointer
+    color: #0080BF
+
+  h2
     @include mixins.title-section
     margin-bottom: 52px
 

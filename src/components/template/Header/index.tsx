@@ -10,7 +10,7 @@ const Header = () => {
     <header>
       <PurchaseInformation />
       <div className='navigation'>
-        <VtexLogo />
+        {VtexLogo()}
         <Input placeholder='O que você está buscando?' />
         <UserNav />
       </div>

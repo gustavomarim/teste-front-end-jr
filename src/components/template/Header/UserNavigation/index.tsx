@@ -15,7 +15,6 @@ const UserNavigation = () => {
           <UserCircle />
         </li>
         <li>
-          {' '}
           <ShoppingCart />
         </li>
       </ul>

@@ -2,14 +2,15 @@
 @use '../../../../styles/variables'
 
 .categories
-  @include mixins.flex (space-evenly, center, wrap)
   margin: 0 74px
   box-shadow: 0px 8px 16px rgba(57, 48, 19, 0.12)
   border-top: 1px solid #F0F0F0
 
   ul
-    display: flex
+    @include mixins.flex (space-between, center, wrap)
     gap: 90px
+    align-items: center
+    padding: 0 56px
 
     li
       @include mixins.flex ('', center, wrap)
@@ -19,6 +20,8 @@
       color: variables.$gray1
       padding: 10px 0 12px 0
       cursor: pointer
+      &:hover
+        color: variables.$rosa-primario
 
-  li.active
-    color: variables.$rosa-primario
+    li.active
+      color: variables.$rosa-primario

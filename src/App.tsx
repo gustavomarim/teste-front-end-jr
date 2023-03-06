@@ -11,6 +11,7 @@ import ProductCard from './components/Product/ProductCard/index';
 import Promotion from './components/Promotion/index';
 import RelatedProducts from './components/RelatedProducts/index';
 import RelatedProductsFilter from './components/RelatedProducts/RelatedProductsFilter/index';
+import { Footer } from './components/template/Footer';
 import Header from './components/template/Header/index';
 import { Product } from './core/models/product';
 import { apiUrl } from './state/constants/apiUrl';
@@ -31,7 +32,7 @@ function App() {
 
   useEffect(() => {
     if (data) setProducts(data.products);
-  }, [data, product]);
+  }, [data]);
 
   function handleProduct(e: React.MouseEvent<HTMLDivElement>): void {
     const productID = e.currentTarget.id;
@@ -139,7 +140,7 @@ function App() {
         </Flex>
       </RelatedProducts>
       <Brand />
-      <RelatedProducts>
+      <RelatedProducts marginBottom={169}>
         <a className='see-all' href='#'>
           Ver todos
         </a>
@@ -169,6 +170,7 @@ function App() {
           )}
         </Modal>
       </RelatedProducts>
+      <Footer />
     </>
   );
 }
